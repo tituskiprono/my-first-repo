@@ -1,0 +1,55 @@
+CREATE DATABASE IF NOT EXISTS Bookstore_db;
+
+USE Bookstore_db;
+
+DROP TABLE IF EXISTS Books;
+
+CREATE TABLE IF NOT EXISTS Books (
+b_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+b_name CHAR(50) NOT NULL,
+b_author VARCHAR(255) NOT NULL,
+email VARCHAR(255),
+sales INTEGER ,
+likes INTEGER
+);
+INSERT INTO Books(b_name,b_author,email,sales,likes) VALUES
+('ELON MUSK','ASHLEE VANCE','ashle321@gmail.com',500000,100000),
+('ZERO TO ONE','PETER THIEL', 'thiel23@gmail.com',1000000,200000),
+('BRIDES OF THE KINDRED','EVANGELINE','evangeline24@gmail.com',600000,400000),
+('CHAINED','ANDERSON','anderson4@gmail.com',3000000,10000000),
+('OBSIDIAN','UNKNOWN',NULL,400000,20000000),
+('H.I.V.E','MARK WALDEN','walden@gmail.com',1000000,50000000),
+('EARTHFALL','MARK WALDEN','walden@gmail.com',500000,60000001),
+('ALCHEMIST','PAULO COELHO','paul@gmail.com',800000,34000234);
+
+DELIMITER //
+
+CREATE EVENT IF NOT EXISTS Totalsum
+ON SCHEDULE AT CURRENT_TIMESTAMP + INTERVAL 1 HOUR
+DO
+BEGIN
+     DECLARE total_sales INTEGER;
+     SELECT SUM(sales) INTO total_sales FROM Books;
+     
+END //
+DELIMITER ;
+     
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
