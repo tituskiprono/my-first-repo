@@ -1,0 +1,3 @@
+URL = "https://api.alpaca.markets"
+KEY = "AKSXPWQTE6E46J1F1UBQ"
+SECRET_KEY = "fVbnC0hwljhIMaTFWdAPUIUwZhyVmS2ABgRwweDc"
